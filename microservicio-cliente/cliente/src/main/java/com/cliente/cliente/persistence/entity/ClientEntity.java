@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="clients")
-public class Client {
+public class ClientEntity {
 
     @Id
     @Column(name="correo_electronico",nullable = false)
@@ -19,7 +19,7 @@ public class Client {
     @Column(name = "movil", nullable = false, length = 11)
     private String phone;
 
-    public Client(){
+    public ClientEntity(){
 
     }
 

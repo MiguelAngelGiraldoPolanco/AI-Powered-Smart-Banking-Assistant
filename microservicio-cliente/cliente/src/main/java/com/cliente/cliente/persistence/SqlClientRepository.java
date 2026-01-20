@@ -21,9 +21,10 @@ public class SqlClientRepository implements ClientRepository{
     @Autowired
     private ClientMapper clientMapper;
 
+
     @Override
     public List<Client> getAll(){
-        List<ClientEntity> clients = (List<ClientEntity>) sqlClientCrudRepository.findAll();
+        List<ClientEntity> clients = sqlClientCrudRepository.findAll();
         return clientMapper.toClients(clients);
     }
 

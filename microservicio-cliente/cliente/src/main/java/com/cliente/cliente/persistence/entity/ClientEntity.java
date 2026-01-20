@@ -1,22 +1,20 @@
 package com.cliente.cliente.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-@Entity
-@Table(name ="clients")
+@Document(collation = "client")
 public class ClientEntity {
 
     @Id
-    @Column(name="correo_electronico",nullable = false)
+    @Field(name="correo_electronico")
     private String email;
 
-    @Column(name = "nombre", nullable = false, length = 200)
+    @Field(name = "nombre")
     private String name;
 
-    @Column(name = "movil", nullable = false, length = 11)
+    @Field(name = "movil")
     private String phone;
 
     public ClientEntity(){

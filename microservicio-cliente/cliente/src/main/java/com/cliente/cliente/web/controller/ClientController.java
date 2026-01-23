@@ -2,6 +2,7 @@ package com.cliente.cliente.web.controller;
 
 import com.cliente.cliente.domain.Client;
 import com.cliente.cliente.domain.service.ClientService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +33,7 @@ public class ClientController {
     }
 
     @PostMapping()
-    public ResponseEntity<Client> save(@RequestBody Client client){
+    public ResponseEntity<Client> save(@Valid @RequestBody Client client){
         Client savedClient = clientService.save(client);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()

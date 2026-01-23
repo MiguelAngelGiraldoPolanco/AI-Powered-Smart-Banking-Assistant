@@ -25,9 +25,9 @@ public class ClientController {
         return ResponseEntity.ok(clients != null ? clients : new ArrayList<>());
     }
 
-    @GetMapping("/{email}")
-    public ResponseEntity<Client> getClient(@PathVariable("email") String email){
-        return clientService.getClient(email)
+    @GetMapping("/{id}")
+    public ResponseEntity<Client> getClient(@PathVariable("id") String id){
+        return clientService.getClient(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -43,9 +43,9 @@ public class ClientController {
         return ResponseEntity.created(location).body(savedClient);
     }
 
-    @DeleteMapping("/{email}")
-    public ResponseEntity<Void> delete(@PathVariable("email") String email){
-        return clientService.delete(email)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") String id){
+        return clientService.delete(id)
                 ? ResponseEntity.ok().build()
                 : ResponseEntity.notFound().build();
     }

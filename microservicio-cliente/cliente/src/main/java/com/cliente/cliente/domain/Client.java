@@ -2,9 +2,14 @@ package com.cliente.cliente.domain;
 
 public class Client {
 
+    private int id;
     private String email;
     private String name;
-    private int phone;
+    private String phone;
+
+    public int getId(){return id;}
+
+    public void setId(int id){this.id=id;}
 
     public String getEmail() {
         return email;
@@ -22,11 +27,11 @@ public class Client {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

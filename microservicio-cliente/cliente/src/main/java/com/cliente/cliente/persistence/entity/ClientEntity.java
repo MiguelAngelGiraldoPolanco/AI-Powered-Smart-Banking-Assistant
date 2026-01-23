@@ -1,6 +1,7 @@
 package com.cliente.cliente.persistence.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -8,6 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class ClientEntity {
 
     @Id
+    private int id;
+
+    @Indexed(unique = true)
     private String email;
 
     @Field(name = "nombre")
@@ -18,6 +22,14 @@ public class ClientEntity {
 
     public ClientEntity(){
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {

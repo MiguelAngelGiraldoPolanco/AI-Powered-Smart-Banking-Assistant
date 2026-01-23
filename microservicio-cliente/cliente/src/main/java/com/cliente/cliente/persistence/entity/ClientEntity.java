@@ -12,6 +12,7 @@ public class ClientEntity {
     private int id;
 
     @Indexed(unique = true)
+    @Field(name = "correo_electronico")
     private String email;
 
     @Field(name = "nombre")

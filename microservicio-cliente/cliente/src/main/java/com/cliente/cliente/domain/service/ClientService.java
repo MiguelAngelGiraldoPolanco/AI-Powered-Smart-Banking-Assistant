@@ -17,15 +17,15 @@ public class ClientService {
     public List<Client> getAll(){
         return clientRepository.getAll();
     }
-    public Optional<Client> getClient(String email) {
-        return clientRepository.getClient(email);
+    public Optional<Client> getClient(String id) {
+        return clientRepository.getClient(id);
     }
     public Client save (Client client){
         return clientRepository.save(client);
     }
-    public boolean delete(String email){
-        return getClient(email).map(customer -> {
-            clientRepository.delete(email);
+    public boolean delete(String id){
+        return getClient(id).map(customer -> {
+            clientRepository.delete(id);
             return true;
         }).orElse(false);
     }

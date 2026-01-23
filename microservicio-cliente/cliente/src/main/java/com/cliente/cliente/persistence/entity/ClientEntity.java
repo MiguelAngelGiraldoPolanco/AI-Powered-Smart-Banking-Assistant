@@ -1,5 +1,6 @@
 package com.cliente.cliente.persistence.entity;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -9,27 +10,30 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class ClientEntity {
 
     @Id
-    private int id;
+    private String id;
 
     @Indexed(unique = true)
+    @NotNull
     @Field(name = "correo_electronico")
     private String email;
 
     @Field(name = "nombre")
+    @NotNull
     private String name;
 
     @Field(name = "movil")
+    @NotNull
     private String phone;
 
     public ClientEntity(){
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

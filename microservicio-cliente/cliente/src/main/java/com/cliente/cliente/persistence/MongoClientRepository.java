@@ -29,8 +29,8 @@ public class MongoClientRepository implements ClientRepository{
     }
 
     @Override
-    public Optional<Client> getClient(String email) {
-        return mongoClientCrudRepository.findById(email).map(clientEntity -> clientMapper.toClient(clientEntity));
+    public Optional<Client> getClient(String id) {
+        return mongoClientCrudRepository.findById(id).map(clientEntity -> clientMapper.toClient(clientEntity));
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MongoClientRepository implements ClientRepository{
     }
 
     @Override
-    public void delete(String email) {
-        mongoClientCrudRepository.deleteById(email);
+    public void delete(String id) {
+        mongoClientCrudRepository.deleteById(id);
     }
 }

@@ -4,11 +4,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collation = "client")
+@Document(collection = "clientes")
 public class ClientEntity {
 
     @Id
-    @Field(name="correo_electronico")
     private String email;
 
     @Field(name = "nombre")
